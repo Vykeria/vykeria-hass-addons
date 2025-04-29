@@ -1,0 +1,23 @@
+name: "Homarr"
+description: "Homarr v1 integration for Home Assistant"
+# Increment this version number for your addon
+version: "1.0.0"
+slug: "homarr_addon"
+init: false
+arch:
+  - aarch64
+  - amd64
+# Verify armhf/i386 support with the official Homarr v1 image if needed
+# - armhf
+# - i386
+# Specify the official Homarr v1 image
+image: "ghcr.io/homarr-labs/homarr:latest"
+ports:
+  # Homarr v1 default port
+  7575/tcp: 7575
+map:
+  # Maps host /share -> container /share for persistent data
+  - share:rw
+# Optional: Add options for user configuration if desired
+# options: {}
+# schema: {}
